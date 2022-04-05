@@ -28,21 +28,70 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Pilih tombol Logout jika yakin untuk meninggalkan halaman.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login/logout">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-
+    
 </body>
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/sbadmin/'); ?>js/sb-admin-2.js"></script>
+<script>
+  // setInterval(function() {
+    getStatus();
+    // updateUserDropdown()
+  // }, 1000);
+
+  function getStatus() {
+    // ajax hubungi pemohon
+    $.ajax({
+        url : "dashboard/getStatus",
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('#labelCustomStatus').text(data.status)
+            if(data.status == 'Online') {
+              $("#customStatus").prop("checked", true);
+            } else {
+              $("#customStatus").prop("checked", false);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            swal("Gagal!", "Gagal Custom Status", "error"); // pesan gagal
+        }
+    });
+  }
+
+  $('#customStatus').click(function(){
+      $.ajax({
+        url : "dashboard/customStatus",
+        type: "POST",
+        data: {statusLayanan: $('#labelCustomStatus').html()},
+        dataType: "JSON",
+        success: function(data)
+        {
+          getStatus();
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            swal("Gagal!", "Gagal Custom Status", "error"); // pesan gagal
+          }
+      });
+  }); 
+
+   $('#profile').click(function(){
+    $('#p-actModal').modal('show');
+   });
+</script>
 </html>

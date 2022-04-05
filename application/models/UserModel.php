@@ -92,8 +92,8 @@ class UserModel extends CI_Model{
  
     public function update($where, $data)
     {
-        $this->db->update($this->table, $data, $where);
-        return $this->db->affected_rows();
+        return $this->db->update($this->table, $data, $where);
+        // return $this->db->affected_rows();
     }
  
     public function delete_by_id($id)

@@ -6,6 +6,11 @@ class User extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         $this->load->model('UserModel', 'user');
+        if (!$this->session->userdata('OpenedPTSP')) {
+            redirect('login');
+        } elseif($this->session->userdata('level') !== 'admin') {
+            redirect('dashboard');
+        } 
 	}
 
 	public function index() {
@@ -130,7 +135,7 @@ class User extends CI_Controller {
     private function _do_upload()
     {
         $config['upload_path']          = 'files/user/';
-        $config['allowed_types']        = 'gif|jpg|jpeg|png';
+        $config['allowed_types']        = 'gif|jpg|jpeg|png|svg';
         // $config['max_size']             = 10000; //set max size allowed in Kilobyte
         // $config['max_width']            = 1000; // set max width image allowed
         // $config['max_height']           = 1000; // set max height allowed
