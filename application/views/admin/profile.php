@@ -50,7 +50,7 @@
 			</div>
 			<div class="col-md-6 mb-3">
 			  <label for="password">Password</label>
-			  <input type="password" class="form-control" id="password" name="password" value="<?= $row->password; ?>" required>
+			  <input type="password" class="form-control" id="password" name="password" value="" required>
 			  <div class="valid-feedback">
 				Bagus!
 			  </div>

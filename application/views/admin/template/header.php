@@ -59,7 +59,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item <?= ($title == "Dashboard") ? 'active' : '';?>">
-                <a class="nav-link" href="<?= site_url('dashboard'); ?>">
+                <a class="nav-link" href="<?= site_url('admin/dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -74,7 +74,7 @@
 
             <!-- Nav Item - Antrian -->
             <li class="nav-item <?= ($title == "Antrian") ? 'active' : '';?>">
-                <a class="nav-link" href="<?= site_url('antrian'); ?>">
+                <a class="nav-link" href="<?= site_url('admin/antrian'); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Antrian</span></a>
             </li>
@@ -82,7 +82,7 @@
             <?php if ($this->session->userdata('level') == 'admin'): ?>
             <!-- Nav Item - Management User -->
             <li class="nav-item <?= ($title == "Manajement User") ? 'active' : '';?>">
-                <a class="nav-link" href="<?= site_url('user'); ?>">
+                <a class="nav-link" href="<?= site_url('admin/user'); ?>">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Management User</span></a>
             </li>
@@ -90,7 +90,7 @@
             
             <!-- Nav Item - Profile -->
             <li class="nav-item <?= ($title == "Data Diri") ? 'active' : '';?>">
-                <a class="nav-link" href="<?= site_url('profile'); ?>">
+                <a class="nav-link" href="<?= site_url('admin/profile'); ?>">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Data Diri</span></a>
             </li>
@@ -146,7 +146,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="<?= site_url('profile'); ?>" id="profile">
+                                <a class="dropdown-item" href="<?= site_url('admin/profile'); ?>" id="profile">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>

@@ -5,9 +5,9 @@ class Antrian extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
-        $this->load->model('AntrianModel', 'antrian');
+        $this->load->model('admin/AntrianModel', 'antrian');
         if (!$this->session->userdata('OpenedPTSP')) {
-            redirect('login');
+            redirect('admin/login');
         }
 	}
 

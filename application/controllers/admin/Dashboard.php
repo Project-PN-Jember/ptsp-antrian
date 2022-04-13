@@ -5,9 +5,9 @@ class Dashboard extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
-        $this->load->model('DashboardModel', 'dashboard');
+        $this->load->model('admin/DashboardModel', 'dashboard');
         if (!$this->session->userdata('OpenedPTSP')) {
-            redirect('login');
+            redirect('admin/login');
         }
 	}
 

@@ -5,9 +5,9 @@ class Profile extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
-        $this->load->model('UserModel', 'user');
+        $this->load->model('admin/UserModel', 'user');
         if (!$this->session->userdata('OpenedPTSP')) {
-            redirect('login');
+            redirect('admin/login');
         }
 	}
 
@@ -27,7 +27,7 @@ class Profile extends CI_Controller {
             'nama' => $this->input->post('nama'),
             'email' => $this->input->post('email'),
             'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
+            'password' => md5($this->input->post('password')),
             'tanggal_lahir' => $this->input->post('tanggal_lahir'),
             'jenis_kelamin' => $this->input->post('jenis_kelamin'),
             'status' => $this->input->post('status'),

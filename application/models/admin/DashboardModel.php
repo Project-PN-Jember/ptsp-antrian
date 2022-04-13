@@ -20,7 +20,7 @@ class DashboardModel extends CI_Model{
 		$this->db->join('user b', 'b.id = a.user_id', 'left');
         $this->db->from($this->table . ' a')
                 ->where('a.user_id', $this->session->userdata('idUser'))
-                ->where('a.tanggal', date("Y-m-d", strtotime("tomorrow")));
+                ->where('a.tanggal', date("Y-m-d", strtotime("now")));
  
         $i = 0;
      
@@ -112,14 +112,12 @@ class DashboardModel extends CI_Model{
     {
         $dateNow = date("Y-m-d", strtotime("now"));
         
-        $this->db->select('no_antrian');
+        $this->db->select_min('no_antrian');
         $this->db->where('tanggal', $dateNow);
         $this->db->where('status', 0);
         if ($this->session->userdata('level') != 'admin') {
             $this->db->where('user_id', $this->session->userdata('idUser'));
         }
-        $this->db->order_by('no_antrian', 'ASC');
-        $this->db->limit(1);
         $query = $this->db->get($this->table)->row();
         $result = $query ? $query->no_antrian : "-";
         
