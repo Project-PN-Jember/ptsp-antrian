@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class viewModel extends CI_Model{
+class viewModel extends CI_Model {
 
     var $table = 'antrian';
 

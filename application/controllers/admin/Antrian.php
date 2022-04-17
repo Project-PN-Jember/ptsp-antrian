@@ -30,7 +30,7 @@ class Antrian extends CI_Controller {
             $row[] = $antrian->no_antrian;
             $row[] = $antrian->email;
             $row[] = $antrian->nama;
-            $row[] = '+' . $antrian->telp_wa;
+            $row[] = '+62' . $antrian->telp_wa;
             $row[] = $antrian->pegawai;
             
             //add html for action

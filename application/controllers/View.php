@@ -23,7 +23,7 @@ class View extends CI_Controller {
         // czNlR0YzK0ViZ0FFNGdtTW82SSs4Zz09 = 1
         // echo $this->secure->encrypt_url($id);
         $decrypt_id     = $this->secure->decrypt_url($id);
-
+        
         $data['title'] = 'View Antrian';
 		$data['dataCs'] = $this->viewM->dataCs($decrypt_id);
         // var_dump($data['dataCs']);
