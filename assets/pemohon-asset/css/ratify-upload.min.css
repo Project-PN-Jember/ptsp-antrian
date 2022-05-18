@@ -1,0 +1,62 @@
+.analog-main-div{
+    align-items: center;
+    border: solid 1px black;
+    width: 150px;
+    height: 150px;
+    border-radius: 11rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.border-info{
+    border-color: #c6ecf3 !important;
+}
+
+.bg-info {
+    background-color:#c6ecf3 !important;;
+}
+
+.lbl-file {
+    display: inline-block;
+    border-radius: 0.25rem 0rem 0rem 0.25rem !important;
+}
+
+.w-60 {
+    width:60% !important ;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+.btn-browse {
+    padding-left: 10px;
+    position: absolute;
+    background-color: #ebeeee;
+    border-radius: 0rem 0.25rem 0.25rem 0rem !important;
+    
+}
+
+.btn-change {
+    
+color: rgb(255, 255, 255);
+background-color:#68d8ab;
+border-radius: 0rem !important;
+}
+
+.btn-remove {
+    margin-left: -4px;
+    color: #DB5050;
+    border-color: #E8A3A4;
+ 
+    background-color:#F8ECED;
+    border-radius: 0rem 0.25rem 0.25rem 0rem !important;
+}
+
+.div-change-group {
+    width: 40%;
+    display: inline-block;
+    position: absolute;
+}

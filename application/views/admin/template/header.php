@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/sbadmin/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets/sbadmin/'); ?>vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url('assets/sbadmin/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -58,7 +58,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item <?= ($title == "Dashboard") ? 'active' : '';?>">
+            <li class="nav-item <?= ($title == "Dashboard") ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= site_url('admin/dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -66,30 +66,37 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
- 
+
             <!-- Heading -->
             <div class="sidebar-heading">
                 Addons
             </div>
 
             <!-- Nav Item - Antrian -->
-            <li class="nav-item <?= ($title == "Antrian") ? 'active' : '';?>">
+            <li class="nav-item <?= ($title == "Antrian") ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= site_url('admin/antrian'); ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Antrian</span></a>
             </li>
-            
-            <?php if ($this->session->userdata('level') == 'admin'): ?>
-            <!-- Nav Item - Management User -->
-            <li class="nav-item <?= ($title == "Manajement User") ? 'active' : '';?>">
-                <a class="nav-link" href="<?= site_url('admin/user'); ?>">
-                    <i class="fas fa-fw fa-users"></i>
-                    <span>Management User</span></a>
+
+            <!-- Nav Item - Pemohon -->
+            <li class="nav-item <?= ($title == "Pemohon") ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= site_url('admin/pemohon'); ?>">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Pemohon</span></a>
             </li>
+
+            <?php if ($this->session->userdata('level') == 'admin') : ?>
+                <!-- Nav Item - Management User -->
+                <li class="nav-item <?= ($title == "Manajement User") ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?= site_url('admin/user'); ?>">
+                        <i class="fas fa-fw fa-users"></i>
+                        <span>Management User</span></a>
+                </li>
             <?php endif; ?>
-            
+
             <!-- Nav Item - Profile -->
-            <li class="nav-item <?= ($title == "Data Diri") ? 'active' : '';?>">
+            <li class="nav-item <?= ($title == "Data Diri") ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= site_url('admin/profile'); ?>">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Data Diri</span></a>
@@ -119,7 +126,7 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-            
+
                     <!-- Topbar Search -->
 
                     <div class="ml-auto card border-left-primary">
@@ -138,14 +145,12 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="nameProfile"><?= $this->session->userdata('name'); ?></span>
-                                <img class="img-profile rounded-circle" id="photoProfile" src="<?= base_url('files/user/').$this->session->userdata('foto'); ?>">
+                                <img class="img-profile rounded-circle" id="photoProfile" src="<?= base_url('files/user/') . $this->session->userdata('foto'); ?>">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="<?= site_url('admin/profile'); ?>" id="profile">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
