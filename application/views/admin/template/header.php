@@ -119,10 +119,8 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-            
-                    <!-- Topbar Search -->
 
-                    <div class="ml-auto card border-left-primary">
+                    <div class="card border-left-primary ml-auto">
                         <div class="card-body px-3 py-2 pr-4">
                             <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" id="customStatus" name="statusLayanan">
@@ -136,8 +134,31 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <div id="total_notif"></div>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Notifikasi
+                                </h6>
+                                <div id="notif_item">
+                                    <!-- Kosong -->
+                                </div>
+                                <a class="dropdown-item text-center small text-gray-500" href="<?= base_url('admin/notifikasi') ?>">Lihat semua</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow"> 
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="nameProfile"><?= $this->session->userdata('name'); ?></span>

@@ -11,7 +11,11 @@ class LoginModel extends CI_Model {
 
     public function signIn($username, $password)
     {
-        $query = $this->db->get_where("user", array('username' => $username, 'password' => $password));
+        $where =  array('username' => $username, 
+                        'password' => $password,
+                        'status_user' => 1
+                        );
+        $query = $this->db->get_where("user", $where);
  
         return $query;
     }	

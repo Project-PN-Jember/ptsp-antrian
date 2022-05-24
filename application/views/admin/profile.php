@@ -125,7 +125,7 @@
 		  </div>
 		</div>
 		<div class="modal-footer">
-		  <a type="button" class="btn btn-secondary" href="<?= site_url('dashboard'); ?>">Batal</a>
+		  <a type="button" class="btn btn-secondary" href="<?= site_url('admin/dashboard'); ?>">Batal</a>
 		  <button class="btn btn-primary" id="btnSave" onclick="save()">Simpan</button>
 		</div>
 	    </form>

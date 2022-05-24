@@ -48,6 +48,8 @@
 <script>
   // setInterval(function() {
     getStatus();
+    notifikasi();
+    $('#total_notif').load('notifikasi/total_notif').fadeIn("slow");
     // updateUserDropdown()
   // }, 1000);
 
@@ -72,6 +74,37 @@
         }
     });
   }
+  
+  function notifikasi() {
+    // ajax hubungi pemohon
+    $.ajax({
+        url : "notifikasi/show",
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            if (data) {
+                $('#notif_item').html(data)
+            } else {
+                $('#notif_item').html(`
+                    <a class="dropdown-item d-flex align-items-center text-center">
+                        Notifikasi Kosong
+                    <a>
+                `)
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            swal("Gagal!", "Gagal menampilkan notif", "error"); // pesan gagal
+        }
+    });
+  }
+
+  setInterval(function() {
+    notifikasi()
+    $('#total_notif').load('notifikasi/total_notif').fadeIn("slow");
+  }, 5000);
+
 
   $('#customStatus').click(function(){
       $.ajax({
@@ -89,9 +122,27 @@
           }
       });
   }); 
+  
+  function customStatusNotif(id) {
+    // ajax hubungi pemohon
+    $.ajax({
+        url : "notifikasi/customStatusNotif/"+id,
+        type: "POST",
+        dataType: "JSON",
+        success: function(data)
+        {
+            console.log('200 Ok')
+            // table.ajax.reload(null, false);
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            swal("Gagal!", "Gagal opo", "error"); // pesan gagal
+        }
+    });
+  }
 
-   $('#profile').click(function(){
+  $('#profile').click(function(){
     $('#p-actModal').modal('show');
-   });
+  });
 </script>
 </html>

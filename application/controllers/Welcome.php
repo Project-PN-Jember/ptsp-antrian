@@ -26,7 +26,11 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$data['dataCs'] = $this->db->select('id, nama, status, level, foto')->where('level !=', 'admin')->get('user')->result();
+		$data['dataCs'] = $this->db->select('id, nama, status, level, foto')
+									->where('level !=', 'admin')
+									->where('level !=', 'hakim')
+									->where('status_user', 1)
+									->get('user')->result();
 		$this->load->view('landing-page', $data);
 	}
 }

@@ -127,7 +127,7 @@
 				<option value="" selected>Pilih Status</option>
 				<option value="Online">Online</option>
 				<option value="Offline">Offline</option>
-				<option value="Sedang Melayani">Sedang Melayani</option>
+				<!-- <option value="Sedang Melayani">Sedang Melayani</option> -->
 			  </select>
 			  <div class="valid-feedback">
 				Bagus!
@@ -138,11 +138,12 @@
 			  <label for="level">Level User</label>
 			  <select class="form-control" id="level" name="level" required>
 				<option value="" selected>Pilih Level User</option>
-				<option value="cs perdata">cs perdata</option>
-				<option value="cs pidana">cs pidana</option>
-				<option value="cs umum">cs umum</option>
-				<option value="cs hukum">cs hukum</option>
-				<option value="cs posbakum">cs posbakum</option>
+				<option value="cs perdata">CS Perdata</option>
+				<option value="cs pidana">CS Pidana</option>
+				<option value="cs umum">CS Umum</option>
+				<option value="cs hukum">CS Hukum</option>
+				<option value="cs posbakum">CS Posbakum</option>
+				<option value="hakim">Hakim</option>
 				<option value="admin">admin</option>
 			  </select>
 			  <div class="valid-feedback">
@@ -161,7 +162,22 @@
 			  </div>
 			  <div class="invalid-feedback"> Tolong diisi :) </div>
 			</div>
-			<div class="col-md-6 mb-3">
+		  	<div class="col-md-6 mb-3">
+			  <label for="statusUser">Status Pengguna</label>
+			  <select class="form-control" id="statusUser" name="statusUser" required>
+				<option value="" selected>Pilih Status Pengguna</option>
+				<option value="1">Aktif</option>
+				<option value="0">Non Aktif</option>
+				<!-- <option value="Sedang Melayani">Sedang Melayani</option> -->
+			  </select>
+			  <div class="valid-feedback">
+				Bagus!
+			  </div>
+			  <div class="invalid-feedback"> Tolong diisi. :) </div>
+			</div>
+		  </div>
+		  <div class="form-row">
+		  	<div class="col-md-12 mb-3">
 			  <label for="alamat">Alamat</label>
 			  <textarea name="alamat" id="alamat" class="form-control" rows="3" required></textarea>
 			  <div class="valid-feedback">

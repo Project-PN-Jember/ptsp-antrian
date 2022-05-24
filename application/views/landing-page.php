@@ -363,7 +363,7 @@
 
           <!--Grid column-->
           <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0 white-text">© 2022 Copyright Kelompok 1 </h6>
+            <h6 class="mb-0 white-text">© 2022 Copyright | UM Jember </h6>
           </div>
           <!--Grid column-->
 

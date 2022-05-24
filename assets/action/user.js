@@ -67,10 +67,11 @@ function edit(id) {
             $('#tanggal_lahir').val(data.tanggal_lahir);
             $('#jenis_kelamin').val(data.jenis_kelamin);
             $('#status').val(data.status);
+            $('#statusUser').val(data.status_user);
             $('#level').val(data.level);
             $('#alamat').text(data.alamat);
             if (data.foto !== "") {
-                $('#imgShow').html(`<img src='/ptsp/files/user/${data.foto}' height='100px' class='mt-2'>`);
+                $('#imgShow').html(`<img src='../files/user/${data.foto}' height='100px' class='mt-2'>`);
             } else { $('#imgShow').html(''); }
             $('#actModal').modal('show'); // show bootstrap modal when complete loaded
             $('#titleModal').text("Edit Data User"); // Set title to Bootstrap modal title

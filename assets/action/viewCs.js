@@ -1,8 +1,8 @@
 setInterval(function() {
-  $('#jumlah-antrian').load('/ptsp/view/jumlah_antrian/'+id).fadeIn("slow");
-  $('#antrian-sekarang').load('/ptsp/view/antrian_sekarang/'+id).fadeIn("slow");
-  $('#antrian-selanjutnya').load('/ptsp/view/antrian_selanjutnya/'+id).fadeIn("slow");
-  $('#sisa-antrian').load('/ptsp/view/sisa_antrian/'+id).fadeIn("slow");
+  $('#jumlah-antrian').load('../jumlah_antrian/'+id).fadeIn("slow");
+  $('#antrian-sekarang').load('../antrian_sekarang/'+id).fadeIn("slow");
+  $('#antrian-selanjutnya').load('../antrian_selanjutnya/'+id).fadeIn("slow");
+  $('#sisa-antrian').load('../sisa_antrian/'+id).fadeIn("slow");
   statusCs();
   // table.ajax.reload(null, false); //reload datatable ajax
 }, 1000);
@@ -10,7 +10,7 @@ setInterval(function() {
 function statusCs() {
     // ajax lihat Status
     $.ajax({
-        url : "/ptsp/view/statusCs/"+id,
+        url : "../statusCs/"+id,
         type: "GET",
         dataType: "JSON",
         success: function(data)
@@ -45,7 +45,7 @@ function save() {
     $('#btnSave').attr('disabled',true); //set button disable 
     let url, msgSuccess, msgError;
  
-    url = "/ptsp/view/add_antrian/"+id;
+    url = "../add_antrian/"+id;
     msgSuccess = "Antrian Berhasil Diambil";
     msgError = "Antrian Gagal Diambil";
     
