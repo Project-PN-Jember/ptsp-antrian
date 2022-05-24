@@ -58,7 +58,7 @@ class Antrian extends CI_Controller {
     public function hubungi($id)
     {
         $data = $this->antrian->updateStatus($id);
-        helper_notification('Sidang Pak Jono', '2022-05-23 08:10:00', 'admin/permohonan', '1');
+        // helper_notification('Sidang Pak Jono', '2022-05-23 08:10:00', 'admin/permohonan', '1');
         echo json_encode($data);
     }
 
